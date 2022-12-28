@@ -4,7 +4,7 @@ singapore bicycle parking api
 
 documentation: <https://documenter.getpostman.com/view/3827865/2s8Z6x3tjh>
 
-api url: <>
+api url: <https://8a0l31srx8.execute-api.ap-southeast-1.amazonaws.com/prod>
 
 ## Requirement
 
@@ -36,4 +36,3 @@ $ yarn run test
 // remove serverless services in aws (api gateway, lambda, s3, cloudformation)
 $ yarn run remove
 ```
-

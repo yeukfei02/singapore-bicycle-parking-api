@@ -16,8 +16,8 @@ provider:
     lambda: true
   environment:
     NODE_ENV: production
-    # LOCATION_IQ_TOKEN: ${param:LOCATION_IQ_TOKEN}
-    # ACCOUNT_KEY: ${param:ACCOUNT_KEY}
+    LOCATION_IQ_TOKEN: ${param:LOCATION_IQ_TOKEN}
+    ACCOUNT_KEY: ${param:ACCOUNT_KEY}
   apiGateway:
     shouldStartNameWithService: true
     description: singapore bicycle parking api prod
