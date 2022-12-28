@@ -1,0 +1,41 @@
+org: yeukfei05
+app: singapore-bicycle-parking-api
+service: singapore-bicycle-parking-api
+
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: prod
+  region: ap-southeast-1
+  apiName: singapore-bicycle-parking-api-prod
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    NODE_ENV: production
+    # LOCATION_IQ_TOKEN: ${param:LOCATION_IQ_TOKEN}
+    # ACCOUNT_KEY: ${param:ACCOUNT_KEY}
+  apiGateway:
+    shouldStartNameWithService: true
+    description: singapore bicycle parking api prod
+  architecture: arm64
+  timeout: 30
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+          cors: true
+      - http:
+          method: ANY
+          path: '{proxy+}'
+          cors: true
+
+plugins:
+  - serverless-offline
