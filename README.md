@@ -36,4 +36,3 @@ $ yarn run test
 // remove serverless services in aws (api gateway, lambda, s3, cloudformation)
 $ yarn run remove
 ```
-
